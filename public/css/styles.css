@@ -1,0 +1,48 @@
+* {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.container-xxl {
+    max-width: 1530px;
+}
+
+body {
+    background-color: #FF5959;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.category__img {
+display: flex;
+justify-content: center;
+align-items: center;
+box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
+height: 130px;
+overflow: hidden;
+border-radius: 8px;
+}
+
+.category__img img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.category__link {
+    text-align: center;
+    display: block;
+    transition: 250ms all;
+}
+
+.category__link:hover {
+    transform: scale(1.1);
+    color: #FF5959;
+}
+
+.category__img--large {
+    width: auto;
+}
+
+
