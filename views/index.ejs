@@ -13,7 +13,7 @@
 
         <div class="d-grid gap-2 d-md-flex justify-content-md-start">
             <a href="/explore-latest" class="btn btn-dark btn-primary btn-lg px-4 me-md-2">Explore Latest Recipes</a>
-            <a href="/random-recipe" class="btn btn-outline-secondary btn-lg px-4 me-md-2">Get a Random Recipe</a>
+            <a href="/explore-random" class="btn btn-outline-secondary btn-lg px-4 me-md-2">Get a Random Recipe</a>
         </div>
     </div>
 </div>
@@ -52,39 +52,117 @@
     </div>
 
     <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
-        <a href="/recipe/#" class="cole text-center category__link">
+
+        <% if (food != '') { %>
+            <% food.latest.forEach(function(recipe, index) { %>
+        <a href="/recipe/<%= recipe._id %>" class="cole text-center category__link">
             <div class="category__img category__img--large shadow">
-                <img src="/img/pistachio-chicken.svg" alt="pistachio chicken" loading="lazy">
+                <img src="/uploads/<%= recipe.image %>" alt="<%= recipe.name %>" loading="lazy">
             </div>
-            <div class="pt-1">Pistachio Chicken</div>
+            <div class="pt-1"><%= recipe.name %></div>
         </a>
-        <a href="/recipe/#" class="cole text-center category__link">
-            <div class="category__img category__img--large shadow">
-                <img src="/img/pistachio-chicken.svg" alt="pistachio chicken" loading="lazy">
-            </div>
-            <div class="pt-1">Pistachio Chicken</div>
-        </a>
-        <a href="/recipe/#" class="cole text-center category__link">
-            <div class="category__img category__img--large shadow">
-                <img src="/img/pistachio-chicken.svg" alt="pistachio chicken" loading="lazy">
-            </div>
-            <div class="pt-1">Pistachio Chicken</div>
-        </a>
-        <a href="/recipe/#" class="cole text-center category__link">
-            <div class="category__img category__img--large shadow">
-                <img src="/img/pistachio-chicken.svg" alt="pistachio chicken" loading="lazy">
-            </div>
-            <div class="pt-1">Pistachio Chicken</div>
-        </a>
-        <a href="/recipe/#" class="cole text-center category__link">
-            <div class="category__img category__img--large shadow">
-                <img src="/img/pistachio-chicken.svg" alt="pistachio chicken" loading="lazy">
-            </div>
-            <div class="pt-1">Pistachio Chicken</div>
-        </a>
+         <% }) %>
+        <% } %>
+        
+
+
     </div>
 </section>
 <!--Latest Recipes End-->
+
+<!--Chinese Recipes Start-->
+
+
+<section class="ppb-4 pt-4 ">
+    <div class="d-flex mb-2 align-items-center">
+        <h2>Chinese Recipes</h2>
+        <a href="/categories/Chinese" class="ms-auto">View More</a>
+    </div>
+
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+
+        <% if (food != '') { %>
+            <% food.chinese.forEach(function(recipe, index) { %>
+        <a href="/recipe/<%= recipe._id %>" class="cole text-center category__link">
+            <div class="category__img category__img--large shadow">
+                <img src="/uploads/<%= recipe.image %>" alt="<%= recipe.name %>" loading="lazy">
+            </div>
+            <div class="pt-1"><%= recipe.name %></div>
+        </a>
+         <% }) %>
+        <% } %>
+    </div>
+</section>
+<!--Chinese Recipes End-->
+
+<!--American Recipes Start-->
+<section class="ppb-4 pt-4 ">
+    <div class="d-flex mb-2 align-items-center">
+        <h2>American Recipes</h2>
+        <a href="/categories/American" class="ms-auto">View More</a>
+    </div>
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+        <% if (food != '') { %>
+            <% food.american.forEach(function(recipe, index) { %>
+        <a href="/recipe/<%= recipe._id %>" class="cole text-center category__link">
+            <div class="category__img category__img--large shadow">
+                <img src="/uploads/<%= recipe.image %>" alt="<%= recipe.name %>" loading="lazy">
+            </div>
+            <div class="pt-1"><%= recipe.name %></div>
+        </a>
+         <% }) %>
+        <% } %>
+    </div>
+</section>
+<!--American Recipes End-->
+
+<!--Mexican Recipes Start-->
+<section class="ppb-4 pt-4 ">
+    <div class="d-flex mb-2 align-items-center">
+        <h2>Mexican Recipes</h2>
+        <a href="/categories/Mexican" class="ms-auto">View More</a>
+    </div>
+
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+        <% if (food != '') { %>
+            <% food.mexican.forEach(function(recipe, index) { %>
+        <a href="/recipe/<%= recipe._id %>" class="cole text-center category__link">
+            <div class="category__img category__img--large shadow">
+                <img src="/uploads/<%= recipe.image %>" alt="<%= recipe.name %>" loading="lazy">
+            </div>
+            <div class="pt-1"><%= recipe.name %></div>
+        </a>
+         <% }) %>
+        <% } %>
+    </div>
+</section>
+<!--Mexican Recipes End-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!--Submit Start-->
 <section class="px-4 py-5 my-5 text-center">
